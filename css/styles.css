@@ -630,6 +630,35 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 @media (max-width: 720px) { .counselor-grid { grid-template-columns: 1fr; } }
 
+/* — pricing packages — */
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); align-items: stretch; }
+.pricing-card { padding: var(--space-4) var(--space-4) var(--space-6); gap: var(--space-3); }
+.pricing-card__eyebrow {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+}
+.pricing-card h3 { font-size: 21px; margin: 0; color: var(--color-accent-700); }
+.pricing-card .desc { min-height: 40px; }
+.pricing-card__price {
+  display: flex; align-items: baseline; gap: 6px; margin-top: var(--space-2);
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+}
+.pricing-card__price .amount { font-size: 34px; color: var(--color-accent-2); line-height: 1; }
+.pricing-card__price .per { font-size: 13px; color: var(--color-text-muted); font-weight: 400; }
+.pricing-card__price-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2);
+  font-size: 14px; padding: 7px 0; border-bottom: 1px solid var(--color-divider);
+}
+.pricing-card__price-row:last-of-type { border-bottom: none; }
+.pricing-card__price-row .amount { font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; color: var(--color-accent-2); }
+.pricing-card__list { list-style: none; margin: 0; padding: 0; font-size: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.pricing-card__list li { padding-left: 16px; position: relative; }
+.pricing-card__list li::before { content: "—"; position: absolute; left: 0; color: var(--color-accent); }
+.pricing-card .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 980px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.pricing-note { font-size: 13px; color: var(--color-text-muted); margin-top: var(--space-4); }
+
 /* — page header (interior pages) — */
 .page-header { padding: 56px 0 48px; }
 .page-header h1 { font-size: 44px; color: var(--color-accent-700); max-width: 760px; }
