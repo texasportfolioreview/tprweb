@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/broadsheet-8c1a2915-9f92-4677-afbb-30410b088d46/styles.css">
+<script src="_ds/broadsheet-8c1a2915-9f92-4677-afbb-30410b088d46/_ds_bundle.js"></script>
+<style>
+  body { background: #dedbd8; }
+</style>
+</helmet>
+
+<section style="padding: 64px; display: flex; flex-direction: column; gap: 28px; font-family: var(--font-body); color: var(--color-text);">
+  <div style="display: flex; flex-direction: column; gap: 6px; max-width: 720px;">
+    <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent-700);">Turn 1 — two structures for the same page</div>
+    <div style="font-size: 15px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Same copy, same system. <a href="#1a">1a</a> opens as a broadsheet front page and reads straight down; <a href="#1b">1b</a> opens on a contents index and organizes the middle of the page as numbered departments.</div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start;">
+
+    <div id="1a" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; padding: 3px 10px; background: var(--color-text); color: var(--color-bg);">1A</span>
+        <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Front page — one flowing column</span>
+      </div>
+
+      <div style="width: 1080px; background: var(--color-bg); box-shadow: var(--shadow-lg);">
+
+        <div style="padding: 0 60px;">
+          <div style="height: 7px; background: var(--color-text); margin-top: 28px;"></div>
+          <div style="display: flex; align-items: baseline; gap: 28px; padding: 14px 0 12px;">
+            <div style="font-family: var(--font-heading); font-weight: 600; font-size: 19px; letter-spacing: 0.01em; margin-right: auto;">Texas Portfolio Review</div>
+            <a href="#1a" style="font-size: 14px; color: var(--color-text); text-decoration: none;">Pathways</a>
+            <a href="#1a" style="font-size: 14px; color: var(--color-text); text-decoration: none;">Counselors</a>
+            <a href="#1a" style="font-size: 14px; color: var(--color-text); text-decoration: none;">Student work</a>
+            <a href="#1a" style="font-size: 14px; color: var(--color-text); text-decoration: none;">Pricing</a>
+            <a href="#1a" class="btn btn-primary" style="text-decoration: none;">Book a free intro call</a>
+          </div>
+          <div style="height: 1px; background: var(--color-text);"></div>
+          <div style="display: flex; gap: 24px; padding: 7px 0; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 62%, transparent);">
+            <span>Sessions held online</span>
+            <span>Statewide, Texas</span>
+            <span style="margin-left: auto;">Art &amp; architecture admissions</span>
+          </div>
+          <div style="height: 1px; background: var(--color-text);"></div>
+        </div>
+
+        <div style="padding: 76px 60px 0; display: grid; grid-template-columns: 1fr 300px; gap: 60px; align-items: end;">
+          <div>
+            <div style="font-family: var(--font-heading); font-style: italic; font-size: 26px; color: var(--color-accent-2-700); margin-bottom: 6px;">Introducing</div>
+            <h1 style="font-size: 96px; line-height: 0.92; letter-spacing: -0.02em; margin: 0 0 26px; text-wrap: balance;">Texas Portfolio Review</h1>
+            <p style="font-size: 26px; line-height: 1.35; max-width: 20em; margin: 0 0 32px;">Bringing top-tier portfolio mentorship to Texas students through consultation and collaboration.</p>
+            <div style="display: flex; gap: 14px; align-items: center;">
+              <a href="#1a" class="btn btn-primary" style="font-size: 16px; padding: 13px 22px; text-decoration: none;">Book a free intro consultation</a>
+              <a href="#1a" class="btn btn-ghost" style="font-size: 16px; text-decoration: none;">See the two pathways</a>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 10px;">
+            <div>
+              <div style="font-family: var(--font-heading); font-size: 40px; line-height: 1;">$600,000</div>
+              <div style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">in scholarships awarded to our counselors</div>
+            </div>
+            <div style="font-size: 14px; line-height: 1.7;">Cornell · RISD · USC · UT Austin · Pratt · Parsons · SCAD</div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0; display: grid; grid-template-columns: 200px 1fr; gap: 60px;">
+          <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 8px 0 0; color: var(--color-accent-700);">The problem</h2>
+          <div style="max-width: 34em;">
+            <p style="font-size: 21px; line-height: 1.5;">Traditional college counselors lack nuanced understandings of art/architecture programs, and have likely never constructed a portfolio before. That's a serious problem when it's the most important piece of your application.</p>
+            <p style="font-size: 26px; line-height: 1.4; font-family: var(--font-heading); font-weight: 600; margin: 28px 0 0;">The portfolio isn't just a collection of work, it's the foundation of your narrative and a visual representation of who you are.</p>
+          </div>
+        </div>
+
+        <div style="padding: 88px 60px 0; display: grid; grid-template-columns: 200px 1fr; gap: 60px;">
+          <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 8px 0 0; color: var(--color-accent-700);">Our solution</h2>
+          <div style="max-width: 34em;">
+            <p style="font-size: 21px; line-height: 1.5;">Strong portfolios are built on real, informed guidance from those with insight on the art/architecture admissions process; rather than recycle generic advice, our counseling stems from actual studio experience, years of research, and attendance at the nation's top universities.</p>
+            <p style="font-size: 26px; line-height: 1.4; font-family: var(--font-heading); font-weight: 600; margin: 28px 0 0;">Whatever your level of artistic experience, we are here to help you build, refine, and present your admittance-worthy portfolio.</p>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0;">
+          <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 32px; color: var(--color-accent-700);">Two pathways</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+            <div>
+              <div style="font-family: var(--font-heading); font-style: italic; font-size: 17px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Pathway 1</div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.05; margin: 2px 0 18px;">Early Start</div>
+              <p style="font-size: 17px; line-height: 1.55;">Tailored to middle school students or high school freshmen, sophomores, and juniors looking to begin creating portfolio works.</p>
+              <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 22px;">
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Build:</strong> Developing a visual voice, expanding into new media, creating with real direction and cohesion.</div>
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Iterate:</strong> Honest critique of work and beginning of narrative construction.</div>
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Prepare:</strong> Outline portfolio story and place within overall application.</div>
+              </div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-style: italic; font-size: 17px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Pathway 2</div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 44px; line-height: 1.05; margin: 2px 0 18px;">Review &amp; Refine</div>
+              <p style="font-size: 17px; line-height: 1.55;">Tailored to high school seniors with a pre-existing set of work looking to compile or finalize their portfolios.</p>
+              <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 22px;">
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Review:</strong> Examine existing work for strengths and weaknesses, selection of works for final portfolio.</div>
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Refine:</strong> Construct portfolio narrative and revise portfolio with nuanced critiques and guidance.</div>
+                <div style="font-size: 16px; line-height: 1.5;"><strong>Present:</strong> Finalize portfolio style, descriptions, and submission.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0; display: grid; grid-template-columns: 200px 1fr; gap: 60px;">
+          <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 8px 0 0; color: var(--color-accent-700);">Our counselors were…</h2>
+          <div>
+            <div style="font-family: var(--font-heading); font-weight: 600; font-size: 22px; margin-bottom: 10px;">Accepted into</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 40px; font-size: 17px; line-height: 1.6; max-width: 40em;">
+              <div>Cornell University (Arch)</div>
+              <div>The Pratt Institute</div>
+              <div>Rhode Island School of Design</div>
+              <div>The Parsons School of Design</div>
+              <div>The University of Southern California (Arch)</div>
+              <div>SCAD, The Savannah College of Art and Design</div>
+              <div>The University of Texas (Arch)</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 28px; font-family: var(--font-heading); font-weight: 600; font-size: 21px;">
+              <div>Awarded $600,000 in Scholarships</div>
+              <div>Scholastic Award Winners</div>
+              <div>Presidents of HS NAHS, Art History Club, and more.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px;">
+            <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; color: var(--color-accent-700);">Student work</h2>
+            <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Placeholders — drop in accepted students' pieces</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Observational drawing · graphite</div></div>
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Sectional model · chipboard</div></div>
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Sustained investigation · mixed media</div></div>
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Site study · ink on trace</div></div>
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Self-portrait · oil</div></div>
+            <div><div style="aspect-ratio: 4/5; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Digital composition</div></div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0;">
+          <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 28px; color: var(--color-accent-700);">The counselors</h2>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px;">
+            <div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 26px;">[Counselor name]</div>
+              <div style="font-size: 14px; color: var(--color-accent-700); margin: 2px 0 10px;">[School, program]</div>
+              <p style="font-size: 15px; line-height: 1.6;">[Two sentences on studio background, what they review, and the kind of student they work best with.]</p>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 26px;">[Counselor name]</div>
+              <div style="font-size: 14px; color: var(--color-accent-700); margin: 2px 0 10px;">[School, program]</div>
+              <p style="font-size: 15px; line-height: 1.6;">[Two sentences on studio background, what they review, and the kind of student they work best with.]</p>
+            </div>
+            <div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 26px;">[Counselor name]</div>
+              <div style="font-size: 14px; color: var(--color-accent-700); margin: 2px 0 10px;">[School, program]</div>
+              <p style="font-size: 15px; line-height: 1.6;">[Two sentences on studio background, what they review, and the kind of student they work best with.]</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 26px;">
+            <h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; color: var(--color-accent-700);">Pricing</h2>
+            <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Placeholder tiers — numbers to confirm</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 24px;">Single review</div>
+              <div style="font-family: var(--font-heading); font-size: 40px; line-height: 1;">$000</div>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0;">One 90-minute session online, written notes after, one round of follow-up questions.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 24px;">Review &amp; Refine</div>
+              <div style="font-family: var(--font-heading); font-size: 40px; line-height: 1;">$000</div>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0;">Six sessions across a semester, work selection, narrative, and submission-ready presentation.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 24px;">Early Start</div>
+              <div style="font-family: var(--font-heading); font-size: 40px; line-height: 1;">$000</div>
+              <p style="font-size: 15px; line-height: 1.6; margin: 0;">Ongoing monthly mentorship for younger students building a body of work from scratch.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 110px 60px 0; display: grid; grid-template-columns: 1fr 420px; gap: 72px; align-items: start;">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 62px; line-height: 1; margin: 0;">Real experience.<br>Real advice.<br>Real results.</h2>
+            <p style="font-size: 21px; line-height: 1.45; max-width: 18em; margin: 22px 0 0;">Wherever you are starting from, we are here to help you create the portfolio that gets you into your dream university.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Book a free intro consultation</div>
+            <div class="field"><label>Student name</label><input class="input" type="text" placeholder="First and last"></div>
+            <div class="field"><label>Email</label><input class="input" type="email" placeholder="you@example.com"></div>
+            <div class="field"><label>Grade level</label><input class="input" type="text" placeholder="e.g. 11th grade"></div>
+            <div class="field"><label>Which pathway interests you?</label><input class="input" type="text" placeholder="Early Start / Review &amp; Refine / not sure"></div>
+            <div class="field"><label>Tell us about your work</label><textarea class="input" placeholder="Media you work in, where your portfolio stands today, schools you have in mind."></textarea></div>
+            <button class="btn btn-primary btn-block" style="font-size: 16px; padding: 13px 22px;">Request my free consultation</button>
+            <div style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Sessions are held online. We reply within two business days.</div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 44px;">
+          <div style="height: 1px; background: var(--color-text); margin-bottom: 16px;"></div>
+          <div style="display: flex; align-items: baseline; gap: 24px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">
+            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); margin-right: auto;">Texas Portfolio Review</span>
+            <a href="#1a" style="text-decoration: none;">Instagram</a>
+            <a href="#1a" style="text-decoration: none;">TikTok</a>
+            <a href="#1a" style="text-decoration: none;">hello@[domain]</a>
+            <span>© 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="1b" style="display: flex; flex-direction: column; gap: 10px;">
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0.1em; padding: 3px 10px; background: var(--color-text); color: var(--color-bg);">1B</span>
+        <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Index opening — numbered departments</span>
+      </div>
+
+      <div style="width: 1080px; background: var(--color-bg); box-shadow: var(--shadow-lg);">
+
+        <div style="padding: 28px 60px 0; display: flex; align-items: baseline; gap: 28px;">
+          <div style="font-family: var(--font-heading); font-weight: 600; font-size: 17px; margin-right: auto;">Texas Portfolio Review</div>
+          <div style="font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Online · Texas</div>
+          <a href="#1b" class="btn btn-secondary" style="text-decoration: none;">Book a free intro call</a>
+        </div>
+
+        <div style="padding: 64px 60px 0; display: grid; grid-template-columns: 1fr 300px; gap: 72px;">
+          <div>
+            <h1 style="font-size: 78px; line-height: 0.95; letter-spacing: -0.015em; margin: 0;">Portfolio mentorship<br>for Texas students<br>applying to <span style="font-style: italic; color: var(--color-accent-2-700);">art</span> and <span style="font-style: italic; color: var(--color-accent-2-700);">architecture</span>.</h1>
+            <div style="height: 4px; background: var(--color-text); margin: 34px 0 24px;"></div>
+            <p style="font-size: 20px; line-height: 1.5; max-width: 30em;">Bringing top-tier portfolio mentorship to Texas students through consultation and collaboration. Our counseling stems from actual studio experience, years of research, and attendance at the nation's top universities.</p>
+            <div style="display: flex; gap: 14px; align-items: center; margin-top: 26px;">
+              <a href="#1b" class="btn btn-primary" style="font-size: 16px; padding: 13px 22px; text-decoration: none;">Book a free intro consultation</a>
+              <span style="font-size: 14px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">No cost, no obligation, held online.</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 60%, transparent); margin-bottom: 10px;">Inside</div>
+            <div style="height: 1px; background: var(--color-text);"></div>
+            <div style="display: flex; flex-direction: column;">
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">01</span> The problem</a>
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">02</span> Our solution</a>
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">03</span> Two pathways</a>
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">04</span> Our counselors</a>
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">05</span> Student work</a>
+              <a href="#1b" style="display: flex; gap: 12px; padding: 9px 0; font-size: 15px; text-decoration: none; color: var(--color-text); border-bottom: 1px solid var(--color-divider);"><span style="color: var(--color-accent-700);">06</span> Pricing</a>
+            </div>
+            <div style="margin-top: 34px; font-family: var(--font-heading); font-size: 34px; line-height: 1;">$600,000</div>
+            <div style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">in scholarships awarded to our counselors</div>
+          </div>
+        </div>
+
+        <div style="padding: 100px 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 64px;">
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">01</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">The problem</h2></div>
+            <p style="font-size: 19px; line-height: 1.55;">Traditional college counselors lack nuanced understandings of art/architecture programs, and have likely never constructed a portfolio before. That's a serious problem when it's the most important piece of your application.</p>
+            <p style="font-size: 23px; line-height: 1.4; font-family: var(--font-heading); font-weight: 600; margin: 22px 0 0;">The portfolio isn't just a collection of work, it's the foundation of your narrative and a visual representation of who you are.</p>
+          </div>
+          <div>
+            <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">02</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">Our solution</h2></div>
+            <p style="font-size: 19px; line-height: 1.55;">Strong portfolios are built on real, informed guidance from those with insight on the art/architecture admissions process; rather than recycle generic advice, our counseling stems from actual studio experience, years of research, and attendance at the nation's top universities.</p>
+            <p style="font-size: 23px; line-height: 1.4; font-family: var(--font-heading); font-weight: 600; margin: 22px 0 0;">Whatever your level of artistic experience, we are here to help you build, refine, and present your admittance-worthy portfolio.</p>
+          </div>
+        </div>
+
+        <div style="padding: 100px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 30px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">03</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">Two pathways</h2></div>
+          <div style="display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start;">
+            <div>
+              <div style="font-family: var(--font-heading); font-style: italic; font-size: 16px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Pathway 1</div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 40px; line-height: 1.05; margin: 2px 0 14px;">Early Start</div>
+              <p style="font-size: 16px; line-height: 1.55; margin: 0;">Tailored to middle school students or high school freshmen, sophomores, and juniors looking to begin creating portfolio works.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Build</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Developing a visual voice, expanding into new media, creating with real direction and cohesion.</p></div>
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Iterate</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Honest critique of work and beginning of narrative construction.</p></div>
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Prepare</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Outline portfolio story and place within overall application.</p></div>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 300px 1fr; gap: 60px; align-items: start; margin-top: 56px;">
+            <div>
+              <div style="font-family: var(--font-heading); font-style: italic; font-size: 16px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">Pathway 2</div>
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 40px; line-height: 1.05; margin: 2px 0 14px;">Review &amp; Refine</div>
+              <p style="font-size: 16px; line-height: 1.55; margin: 0;">Tailored to high school seniors with a pre-existing set of work looking to compile or finalize their portfolios.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Review</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Examine existing work for strengths and weaknesses, selection of works for final portfolio.</p></div>
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Refine</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Construct portfolio narrative and revise portfolio with nuanced critiques and guidance.</p></div>
+              <div><div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px; margin-bottom: 6px;">Present</div><p style="font-size: 15px; line-height: 1.6; margin: 0;">Finalize portfolio style, descriptions, and submission.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 100px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 26px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">04</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">Our counselors were…</h2></div>
+          <div style="display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start;">
+            <table class="table" style="font-size: 17px;">
+              <tbody>
+                <tr><td style="width: 42%;">Accepted into</td><td>Cornell University (Arch)</td></tr>
+                <tr><td></td><td>Rhode Island School of Design</td></tr>
+                <tr><td></td><td>The University of Southern California (Arch)</td></tr>
+                <tr><td></td><td>The University of Texas (Arch)</td></tr>
+                <tr><td></td><td>The Pratt Institute</td></tr>
+                <tr><td></td><td>The Parsons School of Design</td></tr>
+                <tr><td></td><td>SCAD, The Savannah College of Art and Design</td></tr>
+                <tr><td>Scholarships</td><td>Awarded $600,000</td></tr>
+                <tr><td>Recognition</td><td>Scholastic Award Winners</td></tr>
+                <tr><td>Leadership</td><td>Presidents of HS NAHS, Art History Club, and more.</td></tr>
+              </tbody>
+            </table>
+            <div style="display: flex; flex-direction: column; gap: 26px;">
+              <div>
+                <div style="font-family: var(--font-heading); font-weight: 600; font-size: 22px;">[Counselor name]</div>
+                <div style="font-size: 13px; color: var(--color-accent-700); margin: 2px 0 8px;">[School, program]</div>
+                <p style="font-size: 14px; line-height: 1.6; margin: 0;">[Studio background and what they review.]</p>
+              </div>
+              <div>
+                <div style="font-family: var(--font-heading); font-weight: 600; font-size: 22px;">[Counselor name]</div>
+                <div style="font-size: 13px; color: var(--color-accent-700); margin: 2px 0 8px;">[School, program]</div>
+                <p style="font-size: 14px; line-height: 1.6; margin: 0;">[Studio background and what they review.]</p>
+              </div>
+              <div>
+                <div style="font-family: var(--font-heading); font-weight: 600; font-size: 22px;">[Counselor name]</div>
+                <div style="font-size: 13px; color: var(--color-accent-700); margin: 2px 0 8px;">[School, program]</div>
+                <p style="font-size: 14px; line-height: 1.6; margin: 0;">[Studio background and what they review.]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 100px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">05</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">Student work</h2><span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Placeholders — drop in accepted students' pieces</span></div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+            <div><div style="aspect-ratio: 1; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Graphite study</div></div>
+            <div><div style="aspect-ratio: 1; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Chipboard model</div></div>
+            <div><div style="aspect-ratio: 1; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Mixed media</div></div>
+            <div><div style="aspect-ratio: 1; background: var(--color-surface); border: 1px solid var(--color-divider);"></div><div style="font-size: 12px; margin-top: 6px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Ink on trace</div></div>
+          </div>
+        </div>
+
+        <div style="padding: 100px 60px 0;">
+          <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px;"><span style="font-family: var(--font-heading); font-size: 15px; color: var(--color-accent-700);">06</span><h2 style="font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; margin: 0;">Pricing</h2><span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Placeholder tiers — numbers to confirm</span></div>
+          <table class="table" style="font-size: 17px;">
+            <thead><tr><th style="width: 24%;">Tier</th><th>What it covers</th><th style="width: 14%; text-align: right;">Price</th></tr></thead>
+            <tbody>
+              <tr><td>Single review</td><td>One 90-minute session online, written notes after, one round of follow-up questions.</td><td style="text-align: right;">$000</td></tr>
+              <tr><td>Review &amp; Refine</td><td>Six sessions across a semester, work selection, narrative, and submission-ready presentation.</td><td style="text-align: right;">$000</td></tr>
+              <tr><td>Early Start</td><td>Ongoing monthly mentorship for younger students building a body of work from scratch.</td><td style="text-align: right;">$000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="padding: 110px 60px 0; display: grid; grid-template-columns: 1fr 420px; gap: 72px; align-items: start;">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: 600; font-size: 58px; line-height: 1; margin: 0;">Real experience.<br>Real advice.<br>Real results.</h2>
+            <p style="font-size: 20px; line-height: 1.45; max-width: 18em; margin: 22px 0 0;">Wherever you are starting from, we are here to help you create the portfolio that gets you into your dream university.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Book a free intro consultation</div>
+            <div class="field"><label>Student name</label><input class="input" type="text" placeholder="First and last"></div>
+            <div class="field"><label>Email</label><input class="input" type="email" placeholder="you@example.com"></div>
+            <div class="field"><label>Grade level</label><input class="input" type="text" placeholder="e.g. 11th grade"></div>
+            <div class="field"><label>Which pathway interests you?</label><input class="input" type="text" placeholder="Early Start / Review &amp; Refine / not sure"></div>
+            <div class="field"><label>Tell us about your work</label><textarea class="input" placeholder="Media you work in, where your portfolio stands today, schools you have in mind."></textarea></div>
+            <button class="btn btn-primary btn-block" style="font-size: 16px; padding: 13px 22px;">Request my free consultation</button>
+            <div style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">Sessions are held online. We reply within two business days.</div>
+          </div>
+        </div>
+
+        <div style="padding: 96px 60px 44px;">
+          <div style="height: 1px; background: var(--color-text); margin-bottom: 16px;"></div>
+          <div style="display: flex; align-items: baseline; gap: 24px; font-size: 13px; color: color-mix(in srgb, var(--color-text) 62%, transparent);">
+            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); margin-right: auto;">Texas Portfolio Review</span>
+            <a href="#1b" style="text-decoration: none;">Instagram</a>
+            <a href="#1b" style="text-decoration: none;">TikTok</a>
+            <a href="#1b" style="text-decoration: none;">hello@[domain]</a>
+            <span>© 2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</x-dc>
+</body>
+</html>

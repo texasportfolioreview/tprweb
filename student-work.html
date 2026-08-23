@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Work — Texas Portfolio Review</title>
+<meta name="description" content="A gallery of portfolio work from Texas Portfolio Review students, across drawing, architecture, mixed media, and more.">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container site-nav__inner">
+    <a href="index.html" class="site-nav__brand">Texas <em>Portfolio</em> Review</a>
+    <button class="site-nav__toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu" aria-controls="primary-nav">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <nav class="site-nav__links" data-nav-links id="primary-nav" aria-label="Primary" hidden>
+      <a href="index.html">Home</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="about.html">About Us</a>
+      <a href="student-work.html" aria-current="page">Student Work</a>
+    </nav>
+    <a href="#" class="btn btn-primary btn-sm site-nav__book" data-open-consult>Book a Free Consultation Now</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="kicker">Student work</div>
+      <h1>Placeholders — drop in accepted students' pieces</h1>
+      <p>Every card below stands in for a real piece from a student's portfolio: the work itself, the medium, and the short line of narrative it carries in their application. This fills in as our first cohort comes through.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+
+      <div class="filter-bar" data-work-filters role="group" aria-label="Filter student work by category">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All work</button>
+        <button type="button" class="filter-btn" data-filter="drawing" aria-pressed="false">Drawing</button>
+        <button type="button" class="filter-btn" data-filter="architecture" aria-pressed="false">Architecture</button>
+        <button type="button" class="filter-btn" data-filter="mixed" aria-pressed="false">Mixed media</button>
+        <button type="button" class="filter-btn" data-filter="digital" aria-pressed="false">Digital</button>
+      </div>
+
+      <div class="work-grid">
+
+        <div class="work-card" data-work-category="drawing">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Drawing</span></div>
+          <p class="desc">[Graphite study — a line or two on technique, subject, and what it demonstrates about the student's observational skill.]</p>
+        </div>
+
+        <div class="work-card" data-work-category="architecture">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Architecture model</span></div>
+          <p class="desc">[Chipboard model — materials, scale, and the design problem the student was working through.]</p>
+        </div>
+
+        <div class="work-card" data-work-category="mixed">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Mixed media</span></div>
+          <p class="desc">[Mixed media — materials used and the concept tying the piece together.]</p>
+        </div>
+
+        <div class="work-card" data-work-category="drawing">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Ink on trace</span></div>
+          <p class="desc">[Ink on trace — a sentence on process and where this sits in the student's broader narrative.]</p>
+        </div>
+
+        <div class="work-card" data-work-category="architecture">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Site drawing</span></div>
+          <p class="desc">[Site plan or section — what the drawing communicates about spatial thinking.]</p>
+        </div>
+
+        <div class="work-card" data-work-category="digital">
+          <div class="work-card__thumb">Image</div>
+          <div class="work-card__meta"><h3>[Piece title]</h3><span class="work-card__tag">Digital</span></div>
+          <p class="desc">[Digital illustration or render — software used and what the piece adds to the portfolio's range.]</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSER ============ -->
+  <section class="closer">
+    <div class="container closer__grid">
+      <div>
+        <h2>Your work could<br>be here next.</h2>
+        <p>Book a free consultation and let's talk about what belongs in your portfolio.</p>
+        <div style="margin-top:30px;">
+          <a href="#" class="btn btn-primary" data-open-consult>Book a free consultation now</a>
+        </div>
+      </div>
+      <div class="closer__panel elev-md">
+        <p class="tag">Start creating.</p>
+        <p style="font-size:15px; color:var(--color-text-muted);">Sessions are held online, anywhere in Texas. We reply within two business days.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <span class="site-footer__brand">Texas Portfolio Review</span>
+      <a href="index.html">Home</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="about.html">About Us</a>
+      <a href="student-work.html">Student Work</a>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="mailto:hello@texasportfolioreview.com">hello@texasportfolioreview.com</a>
+    </div>
+    <hr class="rule">
+    <div class="site-footer__bottom">
+      <span>© 2026 Texas Portfolio Review</span>
+      <span>Online · Texas</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ BOOK-A-CONSULTATION MODAL (shared) ============ -->
+<div class="modal-backdrop" id="consult-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="consult-title">
+    <button class="modal__close" type="button" data-close-consult aria-label="Close">&times;</button>
+
+    <form id="consult-form" novalidate>
+      <div class="modal__eyebrow">Free intro consultation</div>
+      <h2 id="consult-title">Book a free consultation</h2>
+      <p class="modal__intro">No cost, no obligation, held online. Tell us a bit about the student and we'll follow up within two business days.</p>
+
+      <div class="field">
+        <label for="cf-name">Student name</label>
+        <input class="input" id="cf-name" name="name" type="text" placeholder="First and last" required>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input class="input" id="cf-email" name="email" type="email" placeholder="you@example.com" required>
+      </div>
+      <div class="field">
+        <label for="cf-grade">Grade level</label>
+        <input class="input" id="cf-grade" name="grade" type="text" placeholder="e.g. 11th grade" required>
+      </div>
+      <div class="field">
+        <label for="cf-pathway">Which pathway interests you?</label>
+        <select class="input" id="cf-pathway" name="pathway">
+          <option value="">Not sure yet</option>
+          <option value="Early Start">Early Start</option>
+          <option value="Review &amp; Refine">Review &amp; Refine</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cf-message">Tell us about your work</label>
+        <textarea class="input" id="cf-message" name="message" placeholder="Media you work in, where your portfolio stands today, schools you have in mind."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Request my free consultation</button>
+      <p class="form-note">Sessions are held online. We reply within two business days.</p>
+    </form>
+
+    <div class="form-success" id="consult-success" hidden>
+      <div class="form-success__mark">&check;</div>
+      <h2>Request received</h2>
+      <p>Thanks — we'll follow up by email within two business days to schedule your free consultation.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
