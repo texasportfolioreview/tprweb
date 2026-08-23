@@ -82,6 +82,7 @@
   var dialog = backdrop.querySelector(".modal");
   var form = document.getElementById("consult-form");
   var successPanel = document.getElementById("consult-success");
+  var errorPanel = document.getElementById("consult-error");
   var lastFocused = null;
 
   function openModal(event) {
@@ -93,6 +94,7 @@
     // Reset to the form view every time the modal is opened.
     if (form) form.hidden = false;
     if (successPanel) successPanel.hidden = true;
+    if (errorPanel) errorPanel.hidden = true;
 
     var firstField = backdrop.querySelector("input, select, textarea");
     if (firstField) firstField.focus();
@@ -142,39 +144,55 @@
     }
   });
 
-  // Submit handling. This is a static site with no backend, so submissions
-  // are handed off as a pre-filled mailto: draft to the visitor's own email
-  // client, addressed to CONSULT_EMAIL below. For silent (no-mail-client)
-  // delivery, replace this block with a fetch() POST to a form backend
-  // (e.g. Formspree, Netlify Forms) and only show the success panel once
-  // that resolves.
-  var CONSULT_EMAIL = "texasportfolioreview@gmail.com";
+  // Submit handling. The form posts to Formspree (see its action attribute
+  // in the HTML) — with JS enabled we intercept the submit and send it via
+  // fetch so the in-page success/error panels can be shown instead of a
+  // redirect to Formspree's own page. Without JS, the form's own action/
+  // method still POST it there directly (Formspree's default thank-you
+  // page is shown instead of ours, but the submission still goes through).
   if (form) {
     form.addEventListener("submit", function (event) {
+      if (!form.reportValidity()) { event.preventDefault(); return; }
       event.preventDefault();
-      if (!form.reportValidity()) return;
 
-      var data = new FormData(form);
-      var name = data.get("name") || "";
-      var subject = "New consultation request — " + (name || "unnamed student");
-      var body = [
-        "Student name: " + name,
-        "Email: " + (data.get("email") || ""),
-        "Grade level: " + (data.get("grade") || ""),
-        "Pathway interest: " + (data.get("pathway") || "Not sure yet"),
-        "",
-        "About their work:",
-        data.get("message") || ""
-      ].join("\n");
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      if (errorPanel) errorPanel.hidden = true;
 
-      window.location.href =
-        "mailto:" + CONSULT_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-
-      form.hidden = true;
-      if (successPanel) successPanel.hidden = false;
-      form.reset();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.hidden = true;
+            if (successPanel) successPanel.hidden = false;
+            form.reset();
+          } else {
+            return response.json().then(function (data) {
+              var message =
+                data && data.errors && data.errors.length
+                  ? data.errors.map(function (e) { return e.message; }).join(", ")
+                  : "Something went wrong — please try again or email us directly.";
+              var formError = new Error(message);
+              formError.isFormError = true;
+              throw formError;
+            });
+          }
+        })
+        .catch(function (err) {
+          if (errorPanel) {
+            errorPanel.textContent =
+              err && err.isFormError && err.message
+                ? err.message
+                : "Something went wrong — please check your connection and try again, or email us directly.";
+            errorPanel.hidden = false;
+          }
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 })();

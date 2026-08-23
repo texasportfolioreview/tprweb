@@ -134,7 +134,8 @@
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="consult-title">
     <button class="modal__close" type="button" data-close-consult aria-label="Close">&times;</button>
 
-    <form id="consult-form" novalidate>
+    <form id="consult-form" novalidate action="https://formspree.io/f/myeganda" method="POST">
+      <input type="hidden" name="_subject" value="New consultation request — Texas Portfolio Review">
       <div class="modal__eyebrow">Free intro consultation</div>
       <h2 id="consult-title">Book a free consultation</h2>
       <p class="modal__intro">No cost, no obligation, held online. Tell us a bit about the student and we'll follow up within two business days.</p>
@@ -165,6 +166,7 @@
       </div>
 
       <button type="submit" class="btn btn-primary btn-block">Request my free consultation</button>
+      <p class="form-error" id="consult-error" hidden></p>
       <p class="form-note">Sessions are held online. We reply within two business days.</p>
     </form>
 
