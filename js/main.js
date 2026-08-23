@@ -34,6 +34,24 @@
     });
   }
 
+  /* ---------------- Reveal-on-scroll ---------------- */
+  var revealEls = document.querySelectorAll("main > section");
+  if (revealEls.length) {
+    if ("IntersectionObserver" in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revealEls.forEach(function (el) { revealObserver.observe(el); });
+    } else {
+      revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+    }
+  }
+
   /* ---------------- Student work filter (student-work.html only) ---------------- */
   var filterBar = document.querySelector("[data-work-filters]");
   var workCards = document.querySelectorAll("[data-work-category]");
@@ -124,14 +142,35 @@
     }
   });
 
-  // Submit handling. This is a static site with no backend wired up yet —
-  // swap this for a real POST (e.g. to Formspree, Netlify Forms, or your
-  // own endpoint) by replacing the block below with a fetch() call to
-  // form.action and only showing the success panel once that resolves.
+  // Submit handling. This is a static site with no backend, so submissions
+  // are handed off as a pre-filled mailto: draft to the visitor's own email
+  // client, addressed to CONSULT_EMAIL below. For silent (no-mail-client)
+  // delivery, replace this block with a fetch() POST to a form backend
+  // (e.g. Formspree, Netlify Forms) and only show the success panel once
+  // that resolves.
+  var CONSULT_EMAIL = "texasportfolioreview@gmail.com";
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!form.reportValidity()) return;
+
+      var data = new FormData(form);
+      var name = data.get("name") || "";
+      var subject = "New consultation request — " + (name || "unnamed student");
+      var body = [
+        "Student name: " + name,
+        "Email: " + (data.get("email") || ""),
+        "Grade level: " + (data.get("grade") || ""),
+        "Pathway interest: " + (data.get("pathway") || "Not sure yet"),
+        "",
+        "About their work:",
+        data.get("message") || ""
+      ].join("\n");
+
+      window.location.href =
+        "mailto:" + CONSULT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
 
       form.hidden = true;
       if (successPanel) successPanel.hidden = false;
