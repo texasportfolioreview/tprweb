@@ -428,12 +428,10 @@ textarea.input { min-height: 90px; resize: vertical; }
 .site-nav { position: relative; z-index: 40; padding: var(--space-4) 0; background: var(--color-bg); }
 .site-nav__inner { display: flex; align-items: center; gap: var(--space-6); }
 .site-nav__brand {
-  margin-right: auto; display: flex; align-items: center; gap: 9px;
-  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  margin-right: auto; font-family: var(--font-heading); font-weight: var(--font-heading-weight);
   font-size: 19px; color: var(--color-accent-700); text-decoration: none;
 }
 .site-nav__brand em { font-style: italic; color: var(--color-accent-2); }
-.site-nav__brand-mark { height: 30px; width: auto; }
 .site-nav__toggle {
   display: none; flex-direction: column; justify-content: center; gap: 5px;
   width: 36px; height: 36px; padding: 0; border: 0; background: transparent; cursor: pointer;
@@ -482,6 +480,13 @@ textarea.input { min-height: 90px; resize: vertical; }
   display: block; margin-top: 2px; font-family: var(--font-body); font-weight: 400;
   font-size: 12px; color: var(--color-text-muted);
 }
+.hero__schools-more {
+  display: flex; flex-wrap: wrap; align-items: baseline; row-gap: 6px;
+  margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--color-divider);
+  font-size: 13px; color: var(--color-text-muted);
+}
+.hero__schools-more em { font-style: normal; }
+.hero__schools-more span:not(:last-child)::after { content: " · "; }
 .hero__stats { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--color-divider); }
 .hero__stat-num {
   font-family: var(--font-heading); font-weight: var(--font-heading-weight);
@@ -495,22 +500,19 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 
 /* — school logo carousel (index) — */
-.logo-strip { padding: 24px 0 44px; }
-.logo-strip__label {
-  font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--color-text-muted); margin-bottom: var(--space-3);
-}
+.logo-strip { padding: 44px 0 56px; }
 .logo-strip__viewport {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .logo-strip__track {
-  display: flex; align-items: center; gap: 56px; width: max-content;
+  display: flex; align-items: center; gap: 72px; width: max-content;
   animation: logo-scroll 32s linear infinite;
 }
-.logo-strip__item { flex: none; height: 34px; display: flex; align-items: center; }
+.logo-strip__item { flex: none; height: 60px; display: flex; align-items: center; }
 .logo-strip__item img { height: 100%; width: auto; object-fit: contain; }
+.logo-strip__item--parsons img { height: 60%; }
 @keyframes logo-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .logo-strip__track { animation: none; } }
 
