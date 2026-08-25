@@ -547,6 +547,14 @@ textarea.input { min-height: 90px; resize: vertical; }
   .path-steps { grid-template-columns: 1fr; }
 }
 
+/* — key aspects (mentorship) — */
+.aspect-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.aspect-card h3 { font-size: 17px; margin: var(--space-2) 0 0; }
+.aspect-card .desc { font-size: 14px; }
+
+@media (max-width: 900px) { .aspect-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .aspect-grid { grid-template-columns: 1fr; } }
+
 /* — counselor credentials preview (index) — */
 .credential-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-3); font-size: 16px; }
 .credential-sublist {
