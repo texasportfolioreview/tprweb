@@ -59,12 +59,27 @@
             <input class="input" id="wf-grade" name="grade" type="text" placeholder="e.g. 11th grade" required>
           </div>
           <div class="field">
+            <label>Interested in architecture?</label>
+            <div class="seg">
+              <label class="seg-opt"><input type="radio" name="architecture_interest" value="Yes" required> Yes</label>
+              <label class="seg-opt"><input type="radio" name="architecture_interest" value="No"> No</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="wf-schools">Dream schools and programs</label>
+            <input class="input" id="wf-schools" name="dream_schools" type="text" placeholder="e.g. RISD Illustration, Parsons Fashion Design, UT Austin Studio Art">
+          </div>
+          <div class="field">
+            <label for="wf-times">Preferred times to meet this week</label>
+            <input class="input" id="wf-times" name="preferred_times" type="text" placeholder="e.g. weekday evenings after 5pm, Saturday mornings">
+          </div>
+          <div class="field">
             <label for="wf-portfolio">Link to existing work (optional)</label>
             <input class="input" id="wf-portfolio" name="portfolio_link" type="url" placeholder="Google Drive, Behance, personal site, etc.">
           </div>
           <div class="field">
             <label for="wf-message">Anything your counselor should know?</label>
-            <textarea class="input" id="wf-message" name="message" placeholder="Media you work in, schools you have in mind, scheduling constraints."></textarea>
+            <textarea class="input" id="wf-message" name="message" placeholder="Media you work in, scheduling constraints."></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-block">Send my info</button>
