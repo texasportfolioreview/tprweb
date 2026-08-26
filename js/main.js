@@ -99,6 +99,7 @@
     var workDotsWrap = document.getElementById("work-modal-dots");
     var workTitleEl = document.getElementById("work-modal-title");
     var workTagEl = document.getElementById("work-modal-tag");
+    var workInfoEl = document.getElementById("work-modal-info");
     var workDescEl = document.getElementById("work-modal-desc");
     var workLastFocused = null;
     var workSlideIndex = 0;
@@ -119,6 +120,7 @@
 
       workTitleEl.textContent = record.getAttribute("data-title") || "";
       workTagEl.textContent = record.getAttribute("data-tag") || "";
+      workInfoEl.textContent = record.getAttribute("data-info") || "";
       var descSource = record.querySelector("p");
       workDescEl.textContent = descSource ? descSource.textContent : "";
 

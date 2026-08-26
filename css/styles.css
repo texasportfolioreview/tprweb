@@ -679,6 +679,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 .work-modal__meta { padding: var(--space-4) var(--space-2) 0; }
 .work-modal__meta-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
 .work-modal__meta-row h2 { font-size: 22px; margin: 0; }
+.work-modal__info { font-size: 13px; color: var(--color-text-muted); margin: 6px 0 0; }
 .work-modal__meta .desc { margin-top: var(--space-2); color: var(--color-text-muted); }
 #work-modal:not(.has-multiple) .work-card__nav,
 #work-modal:not(.has-multiple) .work-card__dots { display: none; }

@@ -40,7 +40,7 @@
     <div class="container">
       <div class="kicker">Student work</div>
       <h1>A look at the work our students build.</h1>
-      <p>Real pieces from student portfolios will appear here as our students share them — check back soon.</p>
+      <p>Real pieces from student portfolios — the work itself, and the narrative it carries in their application. Click into any piece for the full story.</p>
     </div>
   </section>
 
@@ -55,14 +55,75 @@
         <button type="button" class="filter-btn" data-filter="digital" aria-pressed="false">Digital</button>
       </div>
 
-      <div class="gallery-grid" data-gallery-empty>
-        <p class="gallery-empty">New work is on its way — check back soon.</p>
+      <div class="gallery-grid">
+
+        <button type="button" class="gallery-item" data-work-target="parasite" data-work-category="mixed">
+          <img src="images/student-work/parasite-1.jpg" alt="Parasite" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">Parasite</span><span class="gallery-item__tag">Sculpture</span></span>
+        </button>
+
+        <button type="button" class="gallery-item" data-work-target="playground" data-work-category="architecture">
+          <img src="images/student-work/playground-1.jpg" alt="Playground" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">Playground</span><span class="gallery-item__tag">Architecture</span></span>
+        </button>
+
+        <button type="button" class="gallery-item" data-work-target="intersection" data-work-category="architecture">
+          <img src="images/student-work/intersection-1.jpg" alt="Intersection" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">Intersection</span><span class="gallery-item__tag">Architecture model</span></span>
+        </button>
+
+        <button type="button" class="gallery-item" data-work-target="menil-drawing-institute" data-work-category="drawing">
+          <img src="images/student-work/menil-drawing-institute-1.jpg" alt="The Menil Drawing Institute" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">The Menil Drawing Institute</span><span class="gallery-item__tag">Drawing</span></span>
+        </button>
+
+        <button type="button" class="gallery-item" data-work-target="architectural-drawings" data-work-category="architecture">
+          <img src="images/student-work/architectural-drawings-1.jpg" alt="Architectural Drawings" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">Architectural Drawings</span><span class="gallery-item__tag">Architecture</span></span>
+        </button>
+
+        <button type="button" class="gallery-item" data-work-target="hopscotch-park" data-work-category="digital">
+          <img src="images/student-work/hopscotch-park-1.jpg" alt="Hopscotch Park" loading="lazy">
+          <span class="gallery-item__label"><span class="gallery-item__title">Hopscotch Park</span><span class="gallery-item__tag">Digital rendering</span></span>
+        </button>
+
       </div>
 
       <!-- ============ HIDDEN WORK RECORDS (read by JS to populate the lightbox) ============ -->
       <!-- Add one gallery-item button above per piece, plus a matching #work-<id> record
            here with its title/tag/description and full image set. -->
       <div class="work-records" hidden>
+        <div id="work-parasite" data-title="Parasite" data-tag="Sculpture" data-info="2025 &middot; Hanjie Arts Center &middot; 36&times;48 sculpture &middot; Cardboard, styrofoam, clay, paint, oil pastel, sand">
+          <p>An exposition on the untamed sprawl of my hometown, Parasite explores the monstrous spread of urbanity and its impact on the community and environment through contrasting elements — underlying map, geometric structures, and venous branches. Through it, I hope to reveal sprawl's prevalence in both the city and everyday life.</p>
+          <img src="images/student-work/parasite-1.jpg" alt="Parasite — overhead view">
+          <img src="images/student-work/parasite-2.jpg" alt="Parasite — angled detail view">
+        </div>
+        <div id="work-playground" data-title="Playground" data-tag="Architecture" data-info="2025 &middot; Cornell AAP Pre-College ARCH1110 &middot; 9&times;16 digital spread &middot; Illustrator, Rhino, Photoshop">
+          <p>As a project for the Ithaca Youth Bureau, I envisioned a multi-functional structure to foster communal growth. I designed the structure with winding terraces and staircases to mimic a playground where physical exploration encourages intellectual and artistic discovery.</p>
+          <img src="images/student-work/playground-1.jpg" alt="Playground — hand-drawn elevation">
+          <img src="images/student-work/playground-2.jpg" alt="Playground — axonometric massing study">
+          <img src="images/student-work/playground-3.jpg" alt="Playground — rendered scene with figures">
+        </div>
+        <div id="work-intersection" data-title="Intersection" data-tag="Architecture model" data-info="2025 &middot; Cornell AAP Pre-College ARCH1110 &middot; Basswood sticks, chipboard, paper">
+          <p>As an exploration of how the intersection of one, two, and three dimensional elements form spatial hierarchies, I experimented with various aggregations to emphasize each dimension and their interrelated natures while balancing delicate lightness and grounded stability. The hand-drafted elevations illustrate the model's intersectional shape and structure.</p>
+          <img src="images/student-work/intersection-1.jpg" alt="Intersection — completed model">
+          <img src="images/student-work/intersection-2.jpg" alt="Intersection — process sketch 1">
+          <img src="images/student-work/intersection-3.jpg" alt="Intersection — process sketch 2">
+        </div>
+        <div id="work-menil-drawing-institute" data-title="The Menil Drawing Institute" data-tag="Drawing" data-info="2025 &middot; Hanjie Arts Center &middot; 11&times;14.5 drawing &middot; Acrylic paint, pen">
+          <p>Analyzing and abstracting the Menil Drawing Institute, I created a work that highlighted the structure's various architectural elements — from the inverse structural perspective to the aggregated geometries to the dramatic lighting conditions — and emphasized nature's contributions to the experience as a disruption to the artificial, rigid forms.</p>
+          <img src="images/student-work/menil-drawing-institute-1.jpg" alt="The Menil Drawing Institute — pen and ink drawing">
+        </div>
+        <div id="work-architectural-drawings" data-title="Architectural Drawings" data-tag="Architecture" data-info="2025 &middot; Cornell AAP Pre-College 1110 &middot; Photoshop, Illustrator, Rhino">
+          <p>A series of architectural drawings and diagrams.</p>
+          <img src="images/student-work/architectural-drawings-1.jpg" alt="Architectural Drawings — program bubble diagram">
+          <img src="images/student-work/architectural-drawings-2.jpg" alt="Architectural Drawings — floor plan">
+          <img src="images/student-work/architectural-drawings-3.jpg" alt="Architectural Drawings — elevation">
+        </div>
+        <div id="work-hopscotch-park" data-title="Hopscotch Park" data-tag="Digital rendering" data-info="2026 &middot; HINESAD &middot; Rhino, Illustrator">
+          <p>A plan for the revitalization of an unused urban void into a vibrant community space. Divided into two main sections, play and stay, the space seeks to develop the act of hopscotch where visitors move freely between different cultural activities, increasing cultural exchange and diffusion.</p>
+          <img src="images/student-work/hopscotch-park-1.jpg" alt="Hopscotch Park — labeled isometric diagram">
+        </div>
       </div>
     </div>
   </section>
@@ -172,6 +233,7 @@
         <h2 id="work-modal-title"></h2>
         <span class="work-card__tag" id="work-modal-tag"></span>
       </div>
+      <p class="work-modal__info" id="work-modal-info"></p>
       <p class="desc" id="work-modal-desc"></p>
     </div>
   </div>
