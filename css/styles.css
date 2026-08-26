@@ -611,7 +611,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 .work-card__thumb img { width: 100%; height: 100%; object-fit: contain; }
 
 .work-card__slide {
-  display: none; max-width: 100%; max-height: 70vh; width: auto; height: auto;
+  display: none; max-width: 100%; max-height: 80vh; width: auto; height: auto;
 }
 .work-card__slide.is-active { display: block; }
 
@@ -669,21 +669,28 @@ textarea.input { min-height: 90px; resize: vertical; }
 .gallery-grid[data-gallery-empty] { column-count: 1; }
 .gallery-empty { color: var(--color-text-muted); font-size: 15px; text-align: center; padding: var(--space-8) 0; }
 
-.modal--work { width: min(880px, 100%); padding: var(--space-4); }
+.modal.modal--work {
+  width: min(1100px, 95vw); padding: var(--space-6);
+  display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+  gap: var(--space-4) var(--space-6); align-items: start;
+}
 .work-modal__stage {
   position: relative; display: flex; align-items: center; justify-content: center;
   background: var(--color-surface); border-radius: var(--radius-sm); overflow: hidden;
 }
 .work-modal__slides { display: flex; align-items: center; justify-content: center; width: 100%; }
-.work-modal__meta { padding: var(--space-4) var(--space-2) 0; }
-.work-modal__meta-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
-.work-modal__meta-row h2 { font-size: 22px; margin: 0; }
-.work-modal__info { font-size: 13px; color: var(--color-text-muted); margin: 6px 0 0; }
-.work-modal__meta .desc { margin-top: var(--space-2); color: var(--color-text-muted); }
+.work-modal__meta { padding: 0; }
+.work-modal__meta-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); flex-wrap: wrap; }
+.work-modal__meta-row h2 { font-size: 24px; margin: 0; }
+.work-modal__info { font-size: 13px; color: var(--color-text-muted); margin: 8px 0 0; }
+.work-modal__meta .desc { margin-top: var(--space-3); color: var(--color-text-muted); font-size: 15px; line-height: 1.6; }
 #work-modal:not(.has-multiple) .work-card__nav,
 #work-modal:not(.has-multiple) .work-card__dots { display: none; }
 
-@media (max-width: 560px) { .work-card__slide { max-height: 55vh; } }
+@media (max-width: 760px) {
+  .modal.modal--work { grid-template-columns: 1fr; width: min(560px, 100%); padding: var(--space-4); gap: var(--space-4); }
+  .work-card__slide { max-height: 50vh; }
+}
 
 /* — student work filter bar — */
 .filter-bar { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
