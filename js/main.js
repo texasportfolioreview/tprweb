@@ -177,6 +177,79 @@
     });
   }
 
+  /* ---------------- Shared AJAX form submit ----------------
+     Posts to the form's own action (Formspree) via fetch so an in-page
+     success/error panel can be shown instead of a redirect to Formspree's
+     page. Without JS, the form's action/method still POST it there
+     directly (Formspree's own thank-you page is shown instead of ours,
+     but the submission still goes through). */
+  function bindAjaxForm(form, successPanel, errorPanel) {
+    if (!form) return;
+    form.addEventListener("submit", function (event) {
+      if (!form.reportValidity()) { event.preventDefault(); return; }
+      event.preventDefault();
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      if (errorPanel) errorPanel.hidden = true;
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.hidden = true;
+            if (successPanel) successPanel.hidden = false;
+            form.reset();
+          } else {
+            return response.json().then(function (data) {
+              var message =
+                data && data.errors && data.errors.length
+                  ? data.errors.map(function (e) { return e.message; }).join(", ")
+                  : "Something went wrong — please try again or email us directly.";
+              var formError = new Error(message);
+              formError.isFormError = true;
+              throw formError;
+            });
+          }
+        })
+        .catch(function (err) {
+          if (errorPanel) {
+            errorPanel.textContent =
+              err && err.isFormError && err.message
+                ? err.message
+                : "Something went wrong — please check your connection and try again, or email us directly.";
+            errorPanel.hidden = false;
+          }
+        })
+        .finally(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
+    });
+  }
+
+  /* ---------------- Welcome page (post-purchase) form ----------------
+     Only present on welcome.html. Prefills the plan name from the
+     ?plan= query param Stripe's payment-link redirect appends, both into
+     the heading and a hidden field so it's included in the submission. */
+  var welcomeForm = document.getElementById("welcome-form");
+  if (welcomeForm) {
+    var planName = new URLSearchParams(window.location.search).get("plan");
+    if (planName) {
+      var planField = document.getElementById("wf-plan");
+      var planHeading = document.querySelector("[data-plan-target]");
+      if (planField) planField.value = planName;
+      if (planHeading) planHeading.textContent = planName;
+    }
+    bindAjaxForm(
+      welcomeForm,
+      document.getElementById("welcome-success"),
+      document.getElementById("welcome-error")
+    );
+  }
+
   /* ---------------- Consultation modal ---------------- */
   var backdrop = document.getElementById("consult-modal");
   if (!backdrop) return;
@@ -248,55 +321,5 @@
     }
   });
 
-  // Submit handling. The form posts to Formspree (see its action attribute
-  // in the HTML) — with JS enabled we intercept the submit and send it via
-  // fetch so the in-page success/error panels can be shown instead of a
-  // redirect to Formspree's own page. Without JS, the form's own action/
-  // method still POST it there directly (Formspree's default thank-you
-  // page is shown instead of ours, but the submission still goes through).
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      if (!form.reportValidity()) { event.preventDefault(); return; }
-      event.preventDefault();
-
-      var submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) submitBtn.disabled = true;
-      if (errorPanel) errorPanel.hidden = true;
-
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" }
-      })
-        .then(function (response) {
-          if (response.ok) {
-            form.hidden = true;
-            if (successPanel) successPanel.hidden = false;
-            form.reset();
-          } else {
-            return response.json().then(function (data) {
-              var message =
-                data && data.errors && data.errors.length
-                  ? data.errors.map(function (e) { return e.message; }).join(", ")
-                  : "Something went wrong — please try again or email us directly.";
-              var formError = new Error(message);
-              formError.isFormError = true;
-              throw formError;
-            });
-          }
-        })
-        .catch(function (err) {
-          if (errorPanel) {
-            errorPanel.textContent =
-              err && err.isFormError && err.message
-                ? err.message
-                : "Something went wrong — please check your connection and try again, or email us directly.";
-            errorPanel.hidden = false;
-          }
-        })
-        .finally(function () {
-          if (submitBtn) submitBtn.disabled = false;
-        });
-    });
-  }
+  bindAjaxForm(form, successPanel, errorPanel);
 })();

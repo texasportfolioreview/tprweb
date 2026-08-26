@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome — Texas Portfolio Review</title>
+<meta name="description" content="You're in! Tell us about the student so we can match them with a counselor.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container site-nav__inner">
+    <a href="index.html" class="site-nav__brand">Texas <em>Portfolio</em> Review</a>
+    <button class="site-nav__toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu" aria-controls="primary-nav">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+    <nav class="site-nav__links" data-nav-links id="primary-nav" aria-label="Primary" hidden>
+      <a href="index.html">Home</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="student-work.html">Student Work</a>
+      <a href="about.html">About Us</a>
+    </nav>
+    <a href="pricing.html" class="btn btn-primary btn-sm site-nav__book">Get Started Now</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="kicker">You're in</div>
+      <h1>Welcome to Texas Portfolio Review!</h1>
+      <p>Thanks for enrolling in the <strong data-plan-target>mentorship</strong> package. Tell us a bit about the student below and we'll match them with the right counselor and follow up within two business days to schedule the first session.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="container" style="max-width: 560px;">
+      <div class="card elev-sm welcome-card">
+
+        <form id="welcome-form" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="New enrollment — Texas Portfolio Review">
+          <input type="hidden" id="wf-plan" name="plan" value="">
+
+          <div class="field">
+            <label for="wf-name">Student name</label>
+            <input class="input" id="wf-name" name="name" type="text" placeholder="First and last" required>
+          </div>
+          <div class="field">
+            <label for="wf-email">Email</label>
+            <input class="input" id="wf-email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="wf-grade">Grade level</label>
+            <input class="input" id="wf-grade" name="grade" type="text" placeholder="e.g. 11th grade" required>
+          </div>
+          <div class="field">
+            <label for="wf-portfolio">Link to existing work (optional)</label>
+            <input class="input" id="wf-portfolio" name="portfolio_link" type="url" placeholder="Google Drive, Behance, personal site, etc.">
+          </div>
+          <div class="field">
+            <label for="wf-message">Anything your counselor should know?</label>
+            <textarea class="input" id="wf-message" name="message" placeholder="Media you work in, schools you have in mind, scheduling constraints."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Send my info</button>
+          <p class="form-error" id="welcome-error" hidden></p>
+        </form>
+
+        <div class="form-success" id="welcome-success" hidden>
+          <div class="form-success__mark">&check;</div>
+          <h2>Thanks — you're all set</h2>
+          <p>We'll match the student with a counselor and follow up by email within two business days to schedule the first session.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <span class="site-footer__brand">Texas Portfolio Review</span>
+      <a href="index.html">Home</a>
+      <a href="mentorship.html">Mentorship</a>
+      <a href="student-work.html">Student Work</a>
+      <a href="about.html">About Us</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="https://www.instagram.com/texasportfolioreview/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:texasportfolioreview@gmail.com">texasportfolioreview@gmail.com</a>
+    </div>
+    <hr class="rule">
+    <div class="site-footer__bottom">
+      <span>© 2026 Texas Portfolio Review</span>
+      <span>Online · Texas</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
