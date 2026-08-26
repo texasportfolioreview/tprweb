@@ -696,10 +696,10 @@ textarea.input { min-height: 90px; resize: vertical; }
 .rail-counselor .bio { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
 
 .rail-counselor--lg { gap: var(--space-6); padding: var(--space-6) 0; }
-.rail-counselor--lg .counselor-card__avatar { width: 64px; height: 64px; font-size: 18px; overflow: hidden; }
+.rail-counselor--lg .counselor-card__avatar { width: 104px; height: 104px; font-size: 26px; overflow: hidden; }
 .rail-counselor--lg .counselor-card__avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.rail-counselor--lg h3 { font-size: 20px; }
-.rail-counselor--lg .counselor-card__role { font-size: 13.5px; margin: 4px 0 10px; }
+.rail-counselor--lg h3 { font-size: 25px; }
+.rail-counselor--lg .counselor-card__role { font-size: 15.5px; margin: 5px 0 12px; }
 .rail-counselor--lg .bio { font-size: 16px; line-height: 1.7; }
 
 .counselor-highlights {
