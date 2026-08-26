@@ -70,16 +70,15 @@
             <input class="input" id="wf-schools" name="dream_schools" type="text" placeholder="e.g. RISD Illustration, Parsons Fashion Design, UT Austin Studio Art">
           </div>
           <div class="field">
-            <label for="wf-review-topic">What would you like to review together?</label>
-            <select class="input" id="wf-review-topic" name="review_topic">
-              <option value="">Not sure yet</option>
-              <option value="Portfolio review">Portfolio review</option>
+            <label for="wf-review-topic">Additional elements to review</label>
+            <select class="input" id="wf-review-topic" name="review_topics[]" multiple size="5">
               <option value="College essays">College essays</option>
               <option value="Extracurricular activities">Extracurricular activities</option>
               <option value="Summer programs">Summer programs</option>
               <option value="Common App procedures">Common App procedures</option>
               <option value="Other">Other</option>
             </select>
+            <p class="field__hint">Hold Ctrl (Cmd on Mac) to select more than one, or leave blank if none apply.</p>
           </div>
           <div class="field">
             <label for="wf-times">Preferred times to meet this week</label>
