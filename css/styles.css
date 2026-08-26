@@ -667,6 +667,9 @@ textarea.input { min-height: 90px; resize: vertical; }
 @media (max-width: 900px) { .gallery-grid { column-count: 2; } }
 @media (max-width: 560px) { .gallery-grid { column-count: 1; } }
 
+.gallery-grid[data-gallery-empty] { column-count: 1; }
+.gallery-empty { color: var(--color-text-muted); font-size: 15px; text-align: center; padding: var(--space-8) 0; }
+
 .modal--work { width: min(880px, 100%); padding: var(--space-4); }
 .work-modal__stage {
   position: relative; height: min(60vh, 560px); background: var(--color-surface);

@@ -40,7 +40,7 @@
     <div class="container">
       <div class="kicker">Student work</div>
       <h1>A look at the work our students build.</h1>
-      <p>A sample of real pieces from student portfolios — the work itself, the medium, and the short line of narrative it carries in their application.</p>
+      <p>Real pieces from student portfolios will appear here as our students share them — check back soon.</p>
     </div>
   </section>
 
@@ -55,67 +55,14 @@
         <button type="button" class="filter-btn" data-filter="digital" aria-pressed="false">Digital</button>
       </div>
 
-      <div class="gallery-grid">
-
-        <button type="button" class="gallery-item" data-work-target="playground" data-work-category="architecture">
-          <img src="images/student-work/playground-1.jpg" alt="Playground (B)" loading="lazy">
-          <span class="gallery-item__label"><span class="gallery-item__title">Playground (B)</span><span class="gallery-item__tag">Architecture</span></span>
-        </button>
-
-        <button type="button" class="gallery-item" data-work-target="bloom" data-work-category="architecture">
-          <img src="images/student-work/bloom-1.jpg" alt="Bloom (B)" loading="lazy">
-          <span class="gallery-item__label"><span class="gallery-item__title">Bloom (B)</span><span class="gallery-item__tag">Architecture model</span></span>
-        </button>
-
-        <button type="button" class="gallery-item" data-work-target="urban-voids" data-work-category="digital">
-          <img src="images/student-work/reimagining-urban-voids-1.jpg" alt="Reimagining Urban Voids (B)" loading="lazy">
-          <span class="gallery-item__label"><span class="gallery-item__title">Reimagining Urban Voids (B)</span><span class="gallery-item__tag">Digital rendering</span></span>
-        </button>
-
-        <button type="button" class="gallery-item" data-work-target="parasite" data-work-category="mixed">
-          <img src="images/student-work/parasite-1.jpg" alt="Parasite" loading="lazy">
-          <span class="gallery-item__label"><span class="gallery-item__title">Parasite</span><span class="gallery-item__tag">Sculpture</span></span>
-        </button>
-
-        <button type="button" class="gallery-item" data-work-target="death-of-education" data-work-category="mixed">
-          <img src="images/student-work/death-of-an-american-education-1.jpg" alt="Death of an American Education" loading="lazy">
-          <span class="gallery-item__label"><span class="gallery-item__title">Death of an American Education</span><span class="gallery-item__tag">Mixed media</span></span>
-        </button>
-
+      <div class="gallery-grid" data-gallery-empty>
+        <p class="gallery-empty">New work is on its way — check back soon.</p>
       </div>
 
       <!-- ============ HIDDEN WORK RECORDS (read by JS to populate the lightbox) ============ -->
+      <!-- Add one gallery-item button above per piece, plus a matching #work-<id> record
+           here with its title/tag/description and full image set. -->
       <div class="work-records" hidden>
-        <div id="work-playground" data-title="Playground (B)" data-tag="Architecture">
-          <p>Winding terraces and staircases mimic a playground of exploration, framing views of a lake and circulation around a tree to ground the structure in its site.</p>
-          <img src="images/student-work/playground-1.jpg" alt="Playground (B) — architectural elevation drawing">
-          <img src="images/student-work/playground-2.jpg" alt="Playground (B) — axonometric massing diagram">
-          <img src="images/student-work/playground-3.jpg" alt="Playground (B) — play scene detail">
-        </div>
-        <div id="work-bloom" data-title="Bloom (B)" data-tag="Architecture model">
-          <p>A dynamic cardboard landscape where the building's exterior becomes as much a part of the experience as its interior, encouraging joyous, communal exploration.</p>
-          <img src="images/student-work/bloom-1.jpg" alt="Bloom (B) — cardboard architecture model">
-          <img src="images/student-work/bloom-2.jpg" alt="Bloom (B) — initial axonometric sketch">
-          <img src="images/student-work/bloom-3.jpg" alt="Bloom (B) — model detail photo 1">
-          <img src="images/student-work/bloom-4.jpg" alt="Bloom (B) — model detail photo 2">
-        </div>
-        <div id="work-urban-voids" data-title="Reimagining Urban Voids (B)" data-tag="Digital rendering">
-          <p>Otherworldly renderings reimagine a parking garage as football fields, a carnival, a golf course, and tennis courts — turning an urban void into a vibrant center for play.</p>
-          <img src="images/student-work/reimagining-urban-voids-1.jpg" alt="Reimagining Urban Voids (B) — aerial rooftop stadium rendering">
-          <img src="images/student-work/reimagining-urban-voids-2.jpg" alt="Reimagining Urban Voids (B) — rooftop carnival rendering">
-          <img src="images/student-work/reimagining-urban-voids-3.jpg" alt="Reimagining Urban Voids (B) — rooftop golf course rendering">
-          <img src="images/student-work/reimagining-urban-voids-4.jpg" alt="Reimagining Urban Voids (B) — rooftop tennis courts rendering">
-        </div>
-        <div id="work-parasite" data-title="Parasite" data-tag="Sculpture">
-          <p>A sculptural map exploring the untamed sprawl of the artist's hometown, contrasting an underlying map, geometric structures, and venous branches.</p>
-          <img src="images/student-work/parasite-1.jpg" alt="Parasite — mixed media sculpture on a map, overhead view">
-          <img src="images/student-work/parasite-2.jpg" alt="Parasite — angled detail view 1">
-          <img src="images/student-work/parasite-3.jpg" alt="Parasite — angled detail view 2">
-        </div>
-        <div id="work-death-of-education" data-title="Death of an American Education" data-tag="Mixed media">
-          <p>A burned, mixed-media classroom confronts the reality of gun violence in schools, its charred materials embodying the crisis's many layers.</p>
-          <img src="images/student-work/death-of-an-american-education-1.jpg" alt="Death of an American Education — mixed media piece">
-        </div>
       </div>
     </div>
   </section>
