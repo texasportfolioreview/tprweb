@@ -71,6 +71,28 @@
     railTargets.forEach(function (t) { railObserver.observe(t); });
   }
 
+  /* ---------------- Work card slideshows (student-work.html, index.html) ---------------- */
+  var slideshows = document.querySelectorAll("[data-slideshow]");
+  slideshows.forEach(function (thumb) {
+    var slides = thumb.querySelectorAll(".work-card__slide");
+    var dots = thumb.querySelectorAll(".work-card__dots button");
+    var prevBtn = thumb.querySelector("[data-slide-prev]");
+    var nextBtn = thumb.querySelector("[data-slide-next]");
+    var index = 0;
+
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      slides.forEach(function (slide, si) { slide.classList.toggle("is-active", si === index); });
+      dots.forEach(function (dot, di) { dot.classList.toggle("is-active", di === index); });
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", function () { show(index - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { show(index + 1); });
+    dots.forEach(function (dot, di) {
+      dot.addEventListener("click", function () { show(di); });
+    });
+  });
+
   /* ---------------- Student work filter (student-work.html only) ---------------- */
   var filterBar = document.querySelector("[data-work-filters]");
   var workCards = document.querySelectorAll("[data-work-category]");
