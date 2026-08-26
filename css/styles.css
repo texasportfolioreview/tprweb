@@ -695,12 +695,27 @@ textarea.input { min-height: 90px; resize: vertical; }
 .rail-counselor .counselor-card__role { font-size: 11.5px; margin: 1px 0 3px; }
 .rail-counselor .bio { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
 
-.rail-counselor--lg { gap: var(--space-6); padding: var(--space-6) 0; }
-.rail-counselor--lg .counselor-card__avatar { width: 64px; height: 64px; font-size: 18px; overflow: hidden; }
+.rail-counselor--lg {
+  display: grid; grid-template-columns: 104px 1fr; column-gap: var(--space-6); row-gap: 0;
+  grid-template-areas: "avatar head" "avatar bio" "avatar list";
+  align-items: start; padding: var(--space-6) 0;
+}
+.rail-counselor--lg .counselor-card__avatar { grid-area: avatar; width: 104px; height: 104px; font-size: 26px; overflow: hidden; }
 .rail-counselor--lg .counselor-card__avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-.rail-counselor--lg h3 { font-size: 20px; }
-.rail-counselor--lg .counselor-card__role { font-size: 13.5px; margin: 4px 0 10px; }
-.rail-counselor--lg .bio { font-size: 16px; line-height: 1.7; }
+.rail-counselor__head { grid-area: head; }
+.rail-counselor--lg h3 { font-size: 25px; }
+.rail-counselor--lg .counselor-card__role { font-size: 15.5px; margin: 5px 0 12px; }
+.rail-counselor--lg .bio { grid-area: bio; font-size: 16px; line-height: 1.7; }
+.rail-counselor--lg .counselor-highlights { grid-area: list; }
+
+@media (max-width: 600px) {
+  .rail-counselor--lg {
+    grid-template-columns: 72px 1fr;
+    grid-template-areas: "avatar head" "bio bio" "list list";
+    row-gap: var(--space-3);
+  }
+  .rail-counselor--lg .counselor-card__avatar { width: 72px; height: 72px; font-size: 18px; }
+}
 
 .counselor-highlights {
   list-style: none; margin: var(--space-3) 0 0; padding: 0;
