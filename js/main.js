@@ -7,6 +7,26 @@
 (function () {
   "use strict";
 
+  /* ---------------- Promo banner dismiss ---------------- */
+  var promoBanner = document.getElementById("promo-banner");
+  if (promoBanner) {
+    var promoDismissKey = "tpr-promo-earlybird-dismissed";
+    var promoDismissed = false;
+    try { promoDismissed = !!localStorage.getItem(promoDismissKey); } catch (e) {}
+
+    if (promoDismissed) {
+      promoBanner.hidden = true;
+    } else {
+      var promoClose = promoBanner.querySelector("[data-close-banner]");
+      if (promoClose) {
+        promoClose.addEventListener("click", function () {
+          promoBanner.hidden = true;
+          try { localStorage.setItem(promoDismissKey, "1"); } catch (e) {}
+        });
+      }
+    }
+  }
+
   /* ---------------- Mobile nav toggle ---------------- */
   var navToggle = document.querySelector("[data-nav-toggle]");
   var navLinks = document.querySelector("[data-nav-links]");
