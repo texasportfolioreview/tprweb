@@ -640,6 +640,75 @@ textarea.input { min-height: 90px; resize: vertical; }
 }
 @media (max-width: 720px) { .counselor-grid { grid-template-columns: 1fr; } }
 
+/* — about: reading-rail layout — */
+.rail-layout { display: grid; grid-template-columns: 172px 1fr; gap: 0; align-items: start; }
+.rail-nav {
+  padding: var(--space-2) 0 var(--space-8) var(--space-6);
+  border-right: 1px solid var(--color-divider);
+  position: sticky; top: var(--space-4); align-self: start;
+}
+.rail-nav a {
+  display: flex; align-items: baseline; gap: var(--space-2); font-size: 11px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--color-text-muted); text-decoration: none;
+  margin-bottom: var(--space-4); padding-left: var(--space-3); border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.rail-nav a b {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 10px;
+  color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+.rail-nav a.on { color: var(--color-accent-700); border-left-color: var(--color-accent); font-weight: 600; }
+.rail-nav a.on b { color: var(--color-accent); }
+
+.rail-body { padding: var(--space-2) 0 var(--space-8) var(--space-8); max-width: 640px; }
+.rail-body h1 { font-size: 32px; margin: 0 0 var(--space-3); line-height: 1.18; text-wrap: balance; }
+.rail-body section { scroll-margin-top: var(--space-4); }
+.rail-eyebrow {
+  font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-accent-2);
+  margin: var(--space-8) 0 var(--space-3); display: flex; align-items: center; gap: var(--space-3);
+}
+.rail-eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--color-divider); }
+.rail-body h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent-2); margin: 0 0 var(--space-4); }
+
+.hl {
+  background-image: linear-gradient(color-mix(in srgb, var(--color-accent-2) 22%, transparent), color-mix(in srgb, var(--color-accent-2) 22%, transparent));
+  background-repeat: no-repeat; background-size: 100% 46%; background-position: 0 88%;
+  font-weight: 600; color: var(--color-accent-700); padding: 0 1px;
+}
+.chip {
+  display: inline-block; font-size: 13px; border: 1px solid color-mix(in srgb, var(--color-accent-2) 45%, transparent);
+  color: var(--color-accent-2-700); border-radius: 20px; padding: 1px 10px; margin: 2px 2px; white-space: nowrap;
+}
+
+.pull-big {
+  position: relative; margin: var(--space-8) 0 var(--space-6) -34px; padding: 2px 0 2px 34px;
+  border-left: 3px solid var(--color-accent); font-size: 23px; line-height: 1.48;
+  color: var(--color-accent-700); font-weight: 600;
+}
+.pull-big::before {
+  content: "\201C"; position: absolute; left: 6px; top: -22px; font-size: 70px; line-height: 1; font-weight: 600;
+  color: color-mix(in srgb, var(--color-accent) 22%, transparent); font-family: var(--font-heading);
+}
+
+.rail-counselor { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-3) 0; border-top: 1px solid var(--color-divider); }
+.rail-counselor:last-of-type { border-bottom: 1px solid var(--color-divider); }
+.rail-counselor .counselor-card__avatar { width: 38px; height: 38px; font-size: 12px; }
+.rail-counselor h3 { margin: 0; font-size: 14.5px; }
+.rail-counselor .counselor-card__role { font-size: 11.5px; margin: 1px 0 3px; }
+.rail-counselor .bio { font-size: 13px; color: var(--color-text-muted); margin: 0; line-height: 1.5; }
+
+@media (max-width: 820px) {
+  .rail-layout { grid-template-columns: 1fr; }
+  .rail-nav {
+    position: static; display: flex; gap: var(--space-4); padding: 0 0 var(--space-4);
+    border-right: none; border-bottom: 1px solid var(--color-divider); overflow-x: auto;
+  }
+  .rail-nav a { margin-bottom: 0; padding-left: 0; padding-bottom: var(--space-2); border-left: none; border-bottom: 2px solid transparent; }
+  .rail-nav a.on { border-left: none; border-bottom-color: var(--color-accent); }
+  .rail-body { padding-left: 0; padding-top: var(--space-4); }
+  .pull-big { margin-left: 0; }
+}
+
 /* — pricing packages — */
 .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); align-items: stretch; }
 .pricing-card { padding: var(--space-4) var(--space-4) var(--space-6); gap: var(--space-3); }

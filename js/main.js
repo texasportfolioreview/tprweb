@@ -52,6 +52,25 @@
     }
   }
 
+  /* ---------------- Reading-rail scrollspy (about.html only) ---------------- */
+  var railLinks = document.querySelectorAll(".rail-nav a[data-target]");
+  if (railLinks.length && "IntersectionObserver" in window) {
+    var railTargets = Array.prototype.map
+      .call(railLinks, function (a) { return document.getElementById(a.getAttribute("data-target")); })
+      .filter(Boolean);
+
+    var railObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        railLinks.forEach(function (a) {
+          a.classList.toggle("on", a.getAttribute("data-target") === entry.target.id);
+        });
+      });
+    }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
+
+    railTargets.forEach(function (t) { railObserver.observe(t); });
+  }
+
   /* ---------------- Student work filter (student-work.html only) ---------------- */
   var filterBar = document.querySelector("[data-work-filters]");
   var workCards = document.querySelectorAll("[data-work-category]");
