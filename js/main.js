@@ -71,27 +71,90 @@
     railTargets.forEach(function (t) { railObserver.observe(t); });
   }
 
-  /* ---------------- Work card slideshows (student-work.html, index.html) ---------------- */
-  var slideshows = document.querySelectorAll("[data-slideshow]");
-  slideshows.forEach(function (thumb) {
-    var slides = thumb.querySelectorAll(".work-card__slide");
-    var dots = thumb.querySelectorAll(".work-card__dots button");
-    var prevBtn = thumb.querySelector("[data-slide-prev]");
-    var nextBtn = thumb.querySelector("[data-slide-next]");
-    var index = 0;
+  /* ---------------- Work gallery lightbox (student-work.html) ---------------- */
+  var workModal = document.getElementById("work-modal");
+  if (workModal) {
+    var galleryItems = document.querySelectorAll("[data-work-target]");
+    var workSlidesWrap = document.getElementById("work-modal-slides");
+    var workDotsWrap = document.getElementById("work-modal-dots");
+    var workTitleEl = document.getElementById("work-modal-title");
+    var workTagEl = document.getElementById("work-modal-tag");
+    var workDescEl = document.getElementById("work-modal-desc");
+    var workLastFocused = null;
+    var workSlideIndex = 0;
 
-    function show(i) {
-      index = (i + slides.length) % slides.length;
-      slides.forEach(function (slide, si) { slide.classList.toggle("is-active", si === index); });
-      dots.forEach(function (dot, di) { dot.classList.toggle("is-active", di === index); });
+    function showWorkSlide(i) {
+      var slides = workSlidesWrap.querySelectorAll("img");
+      var dots = workDotsWrap.querySelectorAll("button");
+      if (!slides.length) return;
+      workSlideIndex = (i + slides.length) % slides.length;
+      slides.forEach(function (slide, si) { slide.classList.toggle("is-active", si === workSlideIndex); });
+      dots.forEach(function (dot, di) { dot.classList.toggle("is-active", di === workSlideIndex); });
     }
 
-    if (prevBtn) prevBtn.addEventListener("click", function () { show(index - 1); });
-    if (nextBtn) nextBtn.addEventListener("click", function () { show(index + 1); });
-    dots.forEach(function (dot, di) {
-      dot.addEventListener("click", function () { show(di); });
+    function openWork(id) {
+      var record = document.getElementById("work-" + id);
+      if (!record) return;
+      workLastFocused = document.activeElement;
+
+      workTitleEl.textContent = record.getAttribute("data-title") || "";
+      workTagEl.textContent = record.getAttribute("data-tag") || "";
+      var descSource = record.querySelector("p");
+      workDescEl.textContent = descSource ? descSource.textContent : "";
+
+      var images = record.querySelectorAll("img");
+      workSlidesWrap.innerHTML = "";
+      workDotsWrap.innerHTML = "";
+      images.forEach(function (img, i) {
+        var clone = img.cloneNode(true);
+        clone.className = "work-card__slide" + (i === 0 ? " is-active" : "");
+        workSlidesWrap.appendChild(clone);
+
+        if (images.length > 1) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.setAttribute("aria-label", "Image " + (i + 1) + " of " + images.length);
+          if (i === 0) dot.classList.add("is-active");
+          workDotsWrap.appendChild(dot);
+        }
+      });
+      workModal.classList.toggle("has-multiple", images.length > 1);
+      workSlideIndex = 0;
+
+      workModal.removeAttribute("hidden");
+      document.body.style.overflow = "hidden";
+      workModal.querySelector(".modal__close").focus();
+    }
+
+    function closeWork() {
+      workModal.setAttribute("hidden", "");
+      document.body.style.overflow = "";
+      if (workLastFocused && typeof workLastFocused.focus === "function") workLastFocused.focus();
+    }
+
+    galleryItems.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        openWork(btn.getAttribute("data-work-target"));
+      });
     });
-  });
+
+    workModal.querySelector("[data-close-work]").addEventListener("click", closeWork);
+
+    workModal.addEventListener("click", function (event) {
+      if (event.target === workModal) { closeWork(); return; }
+      if (event.target.closest("[data-slide-prev]")) { showWorkSlide(workSlideIndex - 1); return; }
+      if (event.target.closest("[data-slide-next]")) { showWorkSlide(workSlideIndex + 1); return; }
+      var dotBtn = event.target.closest("#work-modal-dots button");
+      if (dotBtn) {
+        var dots = Array.prototype.slice.call(workDotsWrap.querySelectorAll("button"));
+        showWorkSlide(dots.indexOf(dotBtn));
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && !workModal.hasAttribute("hidden")) closeWork();
+    });
+  }
 
   /* ---------------- Student work filter (student-work.html only) ---------------- */
   var filterBar = document.querySelector("[data-work-filters]");
