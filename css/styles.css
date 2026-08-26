@@ -611,10 +611,9 @@ textarea.input { min-height: 90px; resize: vertical; }
 .work-card__thumb img { width: 100%; height: 100%; object-fit: contain; }
 
 .work-card__slide {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
-  opacity: 0; transition: opacity 0.35s ease;
+  display: none; max-width: 100%; max-height: 70vh; width: auto; height: auto;
 }
-.work-card__slide.is-active { opacity: 1; }
+.work-card__slide.is-active { display: block; }
 
 .work-card__nav {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
@@ -672,10 +671,10 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 .modal--work { width: min(880px, 100%); padding: var(--space-4); }
 .work-modal__stage {
-  position: relative; height: min(60vh, 560px); background: var(--color-surface);
-  border-radius: var(--radius-sm); overflow: hidden;
+  position: relative; display: flex; align-items: center; justify-content: center;
+  background: var(--color-surface); border-radius: var(--radius-sm); overflow: hidden;
 }
-.work-modal__slides { position: absolute; inset: 0; }
+.work-modal__slides { display: flex; align-items: center; justify-content: center; width: 100%; }
 .work-modal__meta { padding: var(--space-4) var(--space-2) 0; }
 .work-modal__meta-row { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); }
 .work-modal__meta-row h2 { font-size: 22px; margin: 0; }
@@ -684,7 +683,7 @@ textarea.input { min-height: 90px; resize: vertical; }
 #work-modal:not(.has-multiple) .work-card__nav,
 #work-modal:not(.has-multiple) .work-card__dots { display: none; }
 
-@media (max-width: 560px) { .work-modal__stage { height: 50vh; } }
+@media (max-width: 560px) { .work-card__slide { max-height: 55vh; } }
 
 /* — student work filter bar — */
 .filter-bar { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6); }
